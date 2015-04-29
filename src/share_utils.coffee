@@ -71,6 +71,9 @@ class ShareUtils
     str = str.to_rfc3986()
     decodeURIComponent(str) isnt str
 
+  is_iphone_or_ipod: () ->
+    navigator.userAgent.indexOf('iPhone') != -1 or navigator.userAgent.indexOf('iPod') != -1 or navigator.userAgent.indexOf('iPad') != -1
+
   encode: (str) ->
     if typeof(str) is "undefined" or @is_encoded(str) then str else str.to_rfc3986()
 
@@ -87,3 +90,8 @@ class ShareUtils
 
     window.open(url+qs, 'targetWindow', "toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,left=#{popup.left},top=#{popup.top},width=#{popup.width},height=#{popup.height}")
 
+  link: (url, params = {}) ->
+    qs = ("#{k}=#{@encode(v)}" for k, v of params).join('&')
+    if qs then qs = "?#{qs}"
+    alert url+qs
+    window.location.href = url+qs

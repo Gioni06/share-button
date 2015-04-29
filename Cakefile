@@ -56,6 +56,7 @@ class Builder
       "config.networks.twitter.display",
       "config.networks.facebook.display",
       "config.networks.google_plus.display",
+      "config.networks.whatsapp.display",
       "config.networks.email.display"
     ]
 

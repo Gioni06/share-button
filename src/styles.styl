@@ -23,16 +23,19 @@ network($width, $center, $left, $middle-left)
   no-select()
 
   [class*='entypo-']:before
-    font-family: 'entypo', sans-serif;
+    font-family: 'font-awesome', sans-serif;
 
   label
-    font-size: 16px
+    font-size: 14px
     cursor: pointer
     margin: 0
-    padding: 5px 10px
-    border-radius: 5px
-    background: #a29baa
-    color: #333333
+    padding: 10px 30px
+    border-radius: 40px
+    height: 40px
+    font-family: "TradeGothicW01-BoldExte", sans-serif
+    background-color: transparent
+    color: #d3204d
+    border: 1px solid #d3204d
     transition()
 
     &:hover
@@ -41,7 +44,7 @@ network($width, $center, $left, $middle-left)
     span
       upcase()
       font-size: .9em
-      font-family: Lato, sans-serif
+      font-family: "TradeGothicW01-BoldExte", sans-serif
       font-weight: bold
       -webkit-font-smoothing: antialiased
       padding-left: 6px
@@ -87,9 +90,11 @@ network($width, $center, $left, $middle-left)
     &.networks-3
       network(180px, -45px, -102px, -190px)
     &.networks-4
-      network(240px, -75px, 162px, -250px)
+      network(240px, -50px, 162px, -250px)
     &.networks-5
-      network(300px, -105px, -225px, -320px)
+      network(300px, -75px, -225px, -320px)
+    &.networks-6
+      network(350px, -110px, -225px, -320px)
 
     &.active
       opacity: 1
@@ -116,24 +121,26 @@ network($width, $center, $left, $middle-left)
       margin: auto
       padding: 0
       list-style: none
-
       li
-        font-size: 20px
+        font-size: 23px
+        border-radius: 50px
         cursor: pointer
-        width: 60px
-        margin: 0
+        margin-right: 10px
+        width: 50px
         padding: 12px 0
         text-align: center
         float: left
-        display: none
-        height: 22px
+        height: 24px
         position: relative
         z-index: 2
         box-sizing: content-box
+        text-align: center
         transition()
 
         &:hover
           color: rgba(0,0,0,.5)
+        &:last-child
+          margin-right: 0px
 
     li[class*='facebook']
       background: #3B5998
@@ -143,13 +150,17 @@ network($width, $center, $left, $middle-left)
       background: #6CDFEA
       display: unquote(config-networks-twitter-display)
 
-    li[class*='gplus']
+    li[class*='google-plus']
       background: #E34429
       display: unquote(config-networks-google_plus-display)
 
     li[class*='pinterest']
       background: #C5282F
       display: unquote(config-networks-pinterest-display)
+
+    li[class*='whatsapp']
+      background: #4dc247
+      display: unquote(config-networks-whatsapp-display)
 
     li[class*='paper-plane']
       background: #42C5B0

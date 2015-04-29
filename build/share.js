@@ -1,5 +1,5 @@
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.Share = f()}})(function(){var define,module,exports;
-function getStyles(config){ return ""+config.selector+" .social.bottom,"+config.selector+" .social.top{-webkit-transform-origin:0 0;-moz-transform-origin:0 0;-o-transform-origin:0 0}"+config.selector+"{width:92px;height:20px;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}"+config.selector+" [class*=entypo-]:before{font-family:entypo,sans-serif}"+config.selector+" label{font-size:16px;cursor:pointer;margin:0;padding:5px 10px;border-radius:5px;background:#a29baa;color:#333;transition:all .3s ease}"+config.selector+" label:hover{opacity:.8}"+config.selector+" label span{text-transform:uppercase;font-size:.9em;font-family:Lato,sans-serif;font-weight:700;-webkit-font-smoothing:antialiased;padding-left:6px}"+config.selector+" .social{opacity:0;transition:all .4s ease;margin-left:-15px;visibility:hidden}"+config.selector+" .social.top{-ms-transform-origin:0 0;transform-origin:0 0;margin-top:-80px}"+config.selector+" .social.bottom{-ms-transform-origin:0 0;transform-origin:0 0;margin-top:5px}"+config.selector+" .social.middle.left,"+config.selector+" .social.middle.right{-ms-transform-origin:5% 50%;transform-origin:5% 50%;-webkit-transform-origin:5% 50%;-moz-transform-origin:5% 50%;-o-transform-origin:5% 50%}"+config.selector+" .social.middle{margin-top:-34px}"+config.selector+" .social.middle.right{margin-left:105px}"+config.selector+" .social.networks-1.center,"+config.selector+" .social.networks-1.left,"+config.selector+" .social.right{margin-left:14px}"+config.selector+" .social.load{transition:none!important}"+config.selector+" .social.networks-1{width:60px}"+config.selector+" .social.networks-1.middle.left{margin-left:-70px}"+config.selector+" .social.networks-1 ul{width:60px}"+config.selector+" .social.networks-2,"+config.selector+" .social.networks-2 ul{width:120px}"+config.selector+" .social.networks-2.center{margin-left:-13px}"+config.selector+" .social.networks-2.left{margin-left:-44px}"+config.selector+" .social.networks-2.middle.left{margin-left:-130px}"+config.selector+" .social.networks-3,"+config.selector+" .social.networks-3 ul{width:180px}"+config.selector+" .social.networks-3.center{margin-left:-45px}"+config.selector+" .social.networks-3.left{margin-left:-102px}"+config.selector+" .social.networks-3.middle.left{margin-left:-190px}"+config.selector+" .social.networks-4,"+config.selector+" .social.networks-4 ul{width:240px}"+config.selector+" .social.networks-4.center{margin-left:-75px}"+config.selector+" .social.networks-4.left{margin-left:162px}"+config.selector+" .social.networks-4.middle.left{margin-left:-250px}"+config.selector+" .social.networks-5,"+config.selector+" .social.networks-5 ul{width:300px}"+config.selector+" .social.networks-5.center{margin-left:-105px}"+config.selector+" .social.networks-5.left{margin-left:-225px}"+config.selector+" .social.networks-5.middle.left{margin-left:-320px}"+config.selector+" .social.active{opacity:1;transition:all .4s ease;visibility:visible}"+config.selector+" .social.active.top{-webkit-transform:scale(1)translateY(-10px);-moz-transform:scale(1)translateY(-10px);-o-transform:scale(1)translateY(-10px);-ms-transform:scale(1)translateY(-10px);transform:scale(1)translateY(-10px)}"+config.selector+" .social.active.bottom{-webkit-transform:scale(1)translateY(15px);-moz-transform:scale(1)translateY(15px);-o-transform:scale(1)translateY(15px);-ms-transform:scale(1)translateY(15px);transform:scale(1)translateY(15px)}"+config.selector+" .social.active.middle.right{-webkit-transform:scale(1)translateX(10px);-moz-transform:scale(1)translateX(10px);-o-transform:scale(1)translateX(10px);-ms-transform:scale(1)translateX(10px);transform:scale(1)translateX(10px)}"+config.selector+" .social.active.middle.left{-webkit-transform:scale(1)translateX(-10px);-moz-transform:scale(1)translateX(-10px);-o-transform:scale(1)translateX(-10px);-ms-transform:scale(1)translateX(-10px);transform:scale(1)translateX(-10px)}"+config.selector+" .social ul{position:relative;left:0;right:0;height:46px;color:#fff;margin:auto;padding:0;list-style:none}"+config.selector+" .social ul li{font-size:20px;cursor:pointer;width:60px;margin:0;padding:12px 0;text-align:center;float:left;display:none;height:22px;position:relative;z-index:2;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;transition:all .3s ease}"+config.selector+" .social ul li:hover{color:rgba(0,0,0,.5)}"+config.selector+" .social li[class*=facebook]{background:#3b5998;display:"+config.networks.facebook.display+"}"+config.selector+" .social li[class*=twitter]{background:#6cdfea;display:"+config.networks.twitter.display+"}"+config.selector+" .social li[class*=gplus]{background:#e34429;display:"+config.networks.google_plus.display+"}"+config.selector+" .social li[class*=pinterest]{background:#c5282f;display:"+config.networks.pinterest.display+"}"+config.selector+" .social li[class*=paper-plane]{background:#42c5b0;display:"+config.networks.email.display+"}"};var ShareUtils;
+function getStyles(config){ return ""+config.selector+"{width:92px;height:20px;-webkit-touch-callout:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}"+config.selector+" .social.networks-1,"+config.selector+" .social.networks-1 ul{width:60px}"+config.selector+" [class*=entypo-]:before{font-family:font-awesome,sans-serif}"+config.selector+" label,"+config.selector+" label span{font-family:TradeGothicW01-BoldExte,sans-serif}"+config.selector+" label{font-size:14px;cursor:pointer;margin:0;padding:10px 30px;border-radius:40px;height:40px;background-color:transparent;color:#d3204d;border:1px solid #d3204d;-webkit-transition:all .3s ease;-moz-transition:all .3s ease;-o-transition:all .3s ease;-ms-transition:all .3s ease;transition:all .3s ease}"+config.selector+" label:hover{opacity:.8}"+config.selector+" label span{text-transform:uppercase;font-size:.9em;font-weight:700;-webkit-font-smoothing:antialiased;padding-left:6px}"+config.selector+" .social{opacity:0;-webkit-transition:all .4s ease;-moz-transition:all .4s ease;-o-transition:all .4s ease;-ms-transition:all .4s ease;transition:all .4s ease;margin-left:-15px;visibility:hidden}"+config.selector+" .social.top{-ms-transform-origin:0 0;transform-origin:0 0;margin-top:-80px}"+config.selector+" .social.bottom,"+config.selector+" .social.top{-webkit-transform-origin:0 0;-moz-transform-origin:0 0;-o-transform-origin:0 0}"+config.selector+" .social.bottom{-ms-transform-origin:0 0;transform-origin:0 0;margin-top:5px}"+config.selector+" .social.middle{margin-top:-34px}"+config.selector+" .social.middle.right{-ms-transform-origin:5% 50%;transform-origin:5% 50%;margin-left:105px}"+config.selector+" .social.networks-1.center,"+config.selector+" .social.networks-1.left,"+config.selector+" .social.right{margin-left:14px}"+config.selector+" .social.middle.left,"+config.selector+" .social.middle.right{-webkit-transform-origin:5% 50%;-moz-transform-origin:5% 50%;-o-transform-origin:5% 50%}"+config.selector+" .social.middle.left{-ms-transform-origin:5% 50%;transform-origin:5% 50%}"+config.selector+" .social.load{-webkit-transition:none!important;-moz-transition:none!important;-o-transition:none!important;-ms-transition:none!important;transition:none!important}"+config.selector+" .social.networks-1.middle.left{margin-left:-70px}"+config.selector+" .social.networks-2,"+config.selector+" .social.networks-2 ul{width:120px}"+config.selector+" .social.networks-2.center{margin-left:-13px}"+config.selector+" .social.networks-2.left{margin-left:-44px}"+config.selector+" .social.networks-2.middle.left{margin-left:-130px}"+config.selector+" .social.networks-3,"+config.selector+" .social.networks-3 ul{width:180px}"+config.selector+" .social.networks-3.center{margin-left:-45px}"+config.selector+" .social.networks-3.left{margin-left:-102px}"+config.selector+" .social.networks-3.middle.left{margin-left:-190px}"+config.selector+" .social.networks-4,"+config.selector+" .social.networks-4 ul{width:240px}"+config.selector+" .social.networks-4.center{margin-left:-50px}"+config.selector+" .social.networks-4.left{margin-left:162px}"+config.selector+" .social.networks-4.middle.left{margin-left:-250px}"+config.selector+" .social.networks-5,"+config.selector+" .social.networks-5 ul{width:300px}"+config.selector+" .social.networks-5.center{margin-left:-75px}"+config.selector+" .social.networks-5.left{margin-left:-225px}"+config.selector+" .social.networks-5.middle.left{margin-left:-320px}"+config.selector+" .social.networks-6,"+config.selector+" .social.networks-6 ul{width:350px}"+config.selector+" .social.networks-6.center{margin-left:-110px}"+config.selector+" .social.networks-6.left{margin-left:-225px}"+config.selector+" .social.networks-6.middle.left{margin-left:-320px}"+config.selector+" .social.active{opacity:1;-webkit-transition:all .4s ease;-moz-transition:all .4s ease;-o-transition:all .4s ease;-ms-transition:all .4s ease;transition:all .4s ease;visibility:visible}"+config.selector+" .social.active.top{-webkit-transform:scale(1)translateY(-10px);-moz-transform:scale(1)translateY(-10px);-o-transform:scale(1)translateY(-10px);-ms-transform:scale(1)translateY(-10px);transform:scale(1)translateY(-10px)}"+config.selector+" .social.active.bottom{-webkit-transform:scale(1)translateY(15px);-moz-transform:scale(1)translateY(15px);-o-transform:scale(1)translateY(15px);-ms-transform:scale(1)translateY(15px);transform:scale(1)translateY(15px)}"+config.selector+" .social.active.middle.right{-webkit-transform:scale(1)translateX(10px);-moz-transform:scale(1)translateX(10px);-o-transform:scale(1)translateX(10px);-ms-transform:scale(1)translateX(10px);transform:scale(1)translateX(10px)}"+config.selector+" .social.active.middle.left{-webkit-transform:scale(1)translateX(-10px);-moz-transform:scale(1)translateX(-10px);-o-transform:scale(1)translateX(-10px);-ms-transform:scale(1)translateX(-10px);transform:scale(1)translateX(-10px)}"+config.selector+" .social ul{position:relative;left:0;right:0;height:46px;color:#fff;margin:auto;padding:0;list-style:none}"+config.selector+" .social ul li{font-size:23px;border-radius:50px;cursor:pointer;margin-right:10px;width:50px;padding:12px 0;float:left;height:24px;position:relative;z-index:2;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;text-align:center;-webkit-transition:all .3s ease;-moz-transition:all .3s ease;-o-transition:all .3s ease;-ms-transition:all .3s ease;transition:all .3s ease}"+config.selector+" .social ul li:hover{color:rgba(0,0,0,.5)}"+config.selector+" .social ul li:last-child{margin-right:0}"+config.selector+" .social li[class*=facebook]{background:#3b5998;display:"+config.networks.facebook.display+"}"+config.selector+" .social li[class*=twitter]{background:#6cdfea;display:"+config.networks.twitter.display+"}"+config.selector+" .social li[class*=google-plus]{background:#e34429;display:"+config.networks.google_plus.display+"}"+config.selector+" .social li[class*=pinterest]{background:#c5282f;display:"+config.networks.pinterest.display+"}"+config.selector+" .social li[class*=whatsapp]{background:#4dc247;display:"+config.networks.whatsapp.display+"}"+config.selector+" .social li[class*=paper-plane]{background:#42c5b0;display:"+config.networks.email.display+"}"};var ShareUtils;
 
 if ((!("classList" in document.documentElement)) && Object.defineProperty && typeof HTMLElement !== "undefined") {
   Object.defineProperty(HTMLElement.prototype, "classList", {
@@ -96,6 +96,10 @@ ShareUtils = (function() {
     return decodeURIComponent(str) !== str;
   };
 
+  ShareUtils.prototype.is_iphone_or_ipod = function() {
+    return navigator.userAgent.indexOf('iPhone') !== -1 || navigator.userAgent.indexOf('iPod') !== -1 || navigator.userAgent.indexOf('iPad') !== -1;
+  };
+
   ShareUtils.prototype.encode = function(str) {
     if (typeof str === "undefined" || this.is_encoded(str)) {
       return str;
@@ -130,6 +134,27 @@ ShareUtils = (function() {
     return window.open(url + qs, 'targetWindow', "toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,left=" + popup.left + ",top=" + popup.top + ",width=" + popup.width + ",height=" + popup.height);
   };
 
+  ShareUtils.prototype.link = function(url, params) {
+    var k, qs, v;
+    if (params == null) {
+      params = {};
+    }
+    qs = ((function() {
+      var results;
+      results = [];
+      for (k in params) {
+        v = params[k];
+        results.push(k + "=" + (this.encode(v)));
+      }
+      return results;
+    }).call(this)).join('&');
+    if (qs) {
+      qs = "?" + qs;
+    }
+    alert(url + qs);
+    return window.location.href = url + qs;
+  };
+
   return ShareUtils;
 
 })();
@@ -156,40 +181,52 @@ Share = (function(superClass) {
       description: this.default_description(),
       ui: {
         flyout: 'top center',
-        button_text: 'Share',
+        button_text: 'Teilen',
         button_font: true,
         icon_font: true
       },
       networks: {
         google_plus: {
           enabled: true,
-          url: null
+          url: null,
+          mobile_only: false
         },
         twitter: {
           enabled: true,
           url: null,
-          description: null
+          description: null,
+          mobile_only: false
         },
         facebook: {
           enabled: true,
-          load_sdk: true,
+          load_sdk: false,
           url: null,
           app_id: null,
           title: null,
           caption: null,
           description: null,
-          image: null
+          image: null,
+          mobile_only: false
         },
         pinterest: {
           enabled: true,
           url: null,
           image: null,
-          description: null
+          description: null,
+          mobile_only: false
+        },
+        whatsapp: {
+          mobile_only: true,
+          enabled: true,
+          title: null,
+          body: null,
+          url: null
         },
         email: {
           enabled: true,
           title: null,
-          description: null
+          description: null,
+          mobile_only: false
         }
       }
     };
@@ -202,7 +239,7 @@ Share = (function(superClass) {
     instances = document.querySelectorAll(element);
     this.extend(this.config, opts, true);
     this.set_global_configuration();
-    this.normalize_network_configuration();
+    this.normalize_network_configuration;
     if (this.config.ui.icon_font) {
       this.inject_icons();
     }
@@ -219,11 +256,23 @@ Share = (function(superClass) {
   };
 
   Share.prototype.setup_instance = function(element, index) {
-    var _this, button, i, instance, label, len, network, networks, results;
+    var _this, button, i, instance, label, len, network, networks, opts, results;
     instance = document.querySelectorAll(element)[index];
     this.hide(instance);
     this.add_class(instance, "sharer-" + index);
     instance = document.querySelectorAll(element)[index];
+    if (instance.dataset.facebookUrl !== void 0 || null) {
+      opts = {
+        networks: {
+          facebook: {
+            url: instance.dataset.facebookUrl
+          }
+        }
+      };
+      this.extend(this.config, opts, true);
+    } else {
+
+    }
     this.inject_css(instance);
     this.inject_html(instance);
     this.show(instance);
@@ -347,8 +396,15 @@ Share = (function(superClass) {
     });
   };
 
+  Share.prototype.network_whatsapp = function() {
+    return this.link('WhatsApp://send', {
+      text: this.config.networks.whatsapp.title,
+      body: this.config.networks.whatsapp.description
+    });
+  };
+
   Share.prototype.inject_icons = function() {
-    return this.inject_stylesheet("https://www.sharebutton.co/fonts/v2/entypo.min.css");
+    return this.inject_stylesheet("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
   };
 
   Share.prototype.inject_fonts = function() {
@@ -387,7 +443,7 @@ Share = (function(superClass) {
   };
 
   Share.prototype.inject_html = function(instance) {
-    return instance.innerHTML = "<label class='entypo-export'><span>" + this.config.ui.button_text + "</span></label><div class='social load " + this.config.ui.flyout + "'><ul><li class='entypo-pinterest' data-network='pinterest'></li><li class='entypo-twitter' data-network='twitter'></li><li class='entypo-facebook' data-network='facebook'></li><li class='entypo-gplus' data-network='google_plus'></li><li class='entypo-paper-plane' data-network='email'></li></ul></div>";
+    return instance.innerHTML = "<label class='entypo-export'><i class='fa fa-share-alt' style='display: inline;'></i><span>" + this.config.ui.button_text + "</span></label><div class='social load " + this.config.ui.flyout + "'><ul><li class='fa fa-pinterest-p' data-network='pinterest'></li><li class='fa fa-twitter' data-network='twitter'></li><li class='fa fa-facebook' data-network='facebook'></li><li class='fa fa-google-plus' data-network='google_plus'></li><li class='fa fa-paper-plane' data-network='email'></li><li class='fa fa-whatsapp' data-network='whatsapp'></li></ul></div>";
   };
 
   Share.prototype.inject_facebook_sdk = function() {
@@ -451,13 +507,26 @@ Share = (function(superClass) {
           this.config.networks[network][option] = this.config[option];
         }
       }
-      if (this.config.networks[network].enabled) {
+      if (this.config.networks[network].mobile_only === true && this.is_iphone_or_ipod() === true) {
         display = 'block';
         this.config.enabled_networks += 1;
+        results.push(this.config.networks[network].display = display);
       } else {
         display = 'none';
+        this.config.networks[network].display = display;
+        if (this.config.networks[network].mobile_only === false || null && this.is_iphone_or_ipod() === false) {
+          if (this.config.networks[network].enabled) {
+            display = 'block';
+            this.config.enabled_networks += 1;
+            results.push(this.config.networks[network].display = display);
+          } else {
+            display = 'none';
+            results.push(this.config.networks[network].display = display);
+          }
+        } else {
+          results.push(void 0);
+        }
       }
-      results.push(this.config.networks[network].display = display);
     }
     return results;
   };

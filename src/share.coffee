@@ -15,7 +15,7 @@ class Share extends ShareUtils
 
       ui:
         flyout: 'top center'
-        button_text: 'Share'
+        button_text: 'Teilen'
         button_font: true
         icon_font: true
 
@@ -23,31 +23,41 @@ class Share extends ShareUtils
         google_plus:
           enabled: true
           url: null
+          mobile_only: false
         twitter:
           enabled: true
           url: null
           description: null # Text
+          mobile_only: false
         facebook:
           enabled: true
-          load_sdk: true
+          load_sdk: false
           url: null
           app_id: null
           title: null
           caption: null
           description: null
           image: null
+          mobile_only: false
         pinterest:
           enabled: true
           url: null
           image: null
           description: null
+          mobile_only: false
+        whatsapp:
+          mobile_only: true
+          enabled: true
+          title: null
+          body: null
+          url: null       # Subject
         email:
           enabled: true
           title: null       # Subject
           description: null # Body
+          mobile_only: false
 
     @setup(@element, options)
-
     return @
 
 
@@ -60,8 +70,7 @@ class Share extends ShareUtils
 
     ## Apply missing network-specific configurations
     @set_global_configuration()
-    @normalize_network_configuration()
-
+    @normalize_network_configuration
     ## Inject Icon Fontset
     @inject_icons() if @config.ui.icon_font
 
@@ -89,6 +98,15 @@ class Share extends ShareUtils
 
     ## Get instance - (Note: Reload Element. gS/qSA doesn't support live NodeLists)
     instance = document.querySelectorAll(element)[index] # TODO: Use more efficient method.
+
+    if instance.dataset.facebookUrl isnt undefined or null
+      opts =
+        networks:
+          facebook:
+            url: instance.dataset.facebookUrl
+      @extend(@config, opts, true)
+    else
+      # nothing
 
     ## Inject HTML and CSS
     @inject_css(instance)
@@ -187,6 +205,9 @@ class Share extends ShareUtils
   network_email: ->
     @popup('mailto:', subject: @config.networks.email.title, body: @config.networks.email.description)
 
+  network_whatsapp: ->
+    @link('WhatsApp://send', text: @config.networks.whatsapp.title, body: @config.networks.whatsapp.description)
+
 
   #############
   # INJECTORS #
@@ -196,7 +217,7 @@ class Share extends ShareUtils
   # Notes
   # - Must be https:// due to CDN CORS caching issues
   # - To include the full entypo set, change URL to: https://www.sharebutton.co/fonts/entypo.css
-  inject_icons: -> @inject_stylesheet("https://www.sharebutton.co/fonts/v2/entypo.min.css")
+  inject_icons: -> @inject_stylesheet("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
   inject_fonts: -> @inject_stylesheet("https://fonts.googleapis.com/css?family=Lato:900&text=#{@config.ui.button_text}")
 
   inject_stylesheet: (url) ->
@@ -231,7 +252,7 @@ class Share extends ShareUtils
       @el.head.appendChild(meta)
 
   inject_html: (instance) ->
-    instance.innerHTML = "<label class='entypo-export'><span>#{@config.ui.button_text}</span></label><div class='social load #{@config.ui.flyout}'><ul><li class='entypo-pinterest' data-network='pinterest'></li><li class='entypo-twitter' data-network='twitter'></li><li class='entypo-facebook' data-network='facebook'></li><li class='entypo-gplus' data-network='google_plus'></li><li class='entypo-paper-plane' data-network='email'></li></ul></div>"
+    instance.innerHTML = "<label class='entypo-export'><i class='fa fa-share-alt' style='display: inline;'></i><span>#{@config.ui.button_text}</span></label><div class='social load #{@config.ui.flyout}'><ul><li class='fa fa-pinterest-p' data-network='pinterest'></li><li class='fa fa-twitter' data-network='twitter'></li><li class='fa fa-facebook' data-network='facebook'></li><li class='fa fa-google-plus' data-network='google_plus'></li><li class='fa fa-paper-plane' data-network='email'></li><li class='fa fa-whatsapp' data-network='whatsapp'></li></ul></div>"
 
   inject_facebook_sdk: ->
     if !window.FB && @config.networks.facebook.app_id && !@el.body.querySelector('#fb-root')
@@ -254,7 +275,6 @@ class Share extends ShareUtils
       opts = fn.call(@config.networks[network], instance)
       unless opts is undefined
         opts = @normalize_filter_config_updates(opts)
-
         @extend(@config.networks[network], opts, true)
         @normalize_network_configuration()
 
@@ -291,13 +311,24 @@ class Share extends ShareUtils
           @config.networks[network][option] = @config[option]
 
       ## Check for enabled networks and display them
-      if @config.networks[network].enabled
+
+      if @config.networks[network].mobile_only is true and @is_iphone_or_ipod() is true
         display = 'block'
         @config.enabled_networks += 1
+        @config.networks[network].display = display
       else
         display = 'none'
+        @config.networks[network].display = display
+        if @config.networks[network].mobile_only is false or null and @is_iphone_or_ipod() is false
+          if @config.networks[network].enabled
+            display = 'block'
+            @config.enabled_networks += 1
+            @config.networks[network].display = display
+          else
+            display = 'none'
+            @config.networks[network].display = display
 
-      @config.networks[network].display = display
+
 
 
   normalize_network_configuration: ->
