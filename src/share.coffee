@@ -1,5 +1,6 @@
 class Share extends ShareUtils
   constructor: (@element, options) ->
+    
     @el =
       head: document.getElementsByTagName('head')[0]
       body: document.getElementsByTagName('body')[0]
@@ -31,7 +32,7 @@ class Share extends ShareUtils
           mobile_only: false
         facebook:
           enabled: true
-          load_sdk: false
+          load_sdk: true
           url: null
           app_id: null
           title: null
@@ -165,7 +166,15 @@ class Share extends ShareUtils
             image: instance.dataset.image 
           google_plus:
             image: instance.dataset.image
-      @extend(@config, opts, true)               
+      @extend(@config, opts, true)
+    
+    if instance.dataset.sdk isnt undefined or null
+      check = if typeof(instance.dataset.sdk) is 'false' || 'False' then instance.dataset.sdk = false else instance.dataset.sdk = true
+      opts =
+        networks:
+          facebook:
+            load_sdk: check
+      @extend(@config, opts, true)                                
         
     else
       # nothing
@@ -242,6 +251,7 @@ class Share extends ShareUtils
 
 
   network_facebook: ->
+      
     if @config.networks.facebook.load_sdk
       if not window.FB then return console.error "The Facebook JS SDK hasn't loaded yet."
 
@@ -314,7 +324,7 @@ class Share extends ShareUtils
       @el.head.appendChild(meta)
 
   inject_html: (instance) ->
-    instance.innerHTML = "<label class='entypo-export'><i class='fa fa-share-alt' style='display: inline;'></i><span>#{@config.ui.button_text}</span></label><div class='social load #{@config.ui.flyout}'><ul><li class='fa fa-pinterest-p' data-network='pinterest'></li><li class='fa fa-twitter' data-network='twitter'></li><li class='fa fa-facebook' data-network='facebook'></li><li class='fa fa-google-plus' data-network='google_plus'></li><li class='fa fa-paper-plane' data-network='email'></li><li class='fa fa-whatsapp' data-network='whatsapp'></li></ul></div>"
+    instance.innerHTML = "<label class='entypo-export'><i class='fa fa-share-alt' style='display: inline;'></i><span>#{@config.ui.button_text}</span></label><div class='social load #{@config.ui.flyout}'><ul><li class='fa fa-pinterest-p' data-network='pinterest'></li><li class='fa fa-twitter' data-network='twitter'></li><li class='fa fa-facebook' data-network='facebook'><span class='count'>10</span></li><li class='fa fa-google-plus' data-network='google_plus'></li><li class='fa fa-paper-plane' data-network='email'></li><li class='fa fa-whatsapp' data-network='whatsapp'></li></ul></div>"
 
   inject_facebook_sdk: ->
     if !window.FB && @config.networks.facebook.app_id && !@el.body.querySelector('#fb-root')
@@ -342,6 +352,7 @@ class Share extends ShareUtils
 
     return
 
+
   default_title: ->
     ## Get default title
     if content = (document.querySelector('meta[property="og:title"]') ||
@@ -364,7 +375,7 @@ class Share extends ShareUtils
       content.getAttribute('content')
     else
       ''
-
+    
   set_global_configuration: ->
     ## Update network-specific configuration with global configurations
     for network, options of @config.networks

@@ -33,7 +33,7 @@ if ("classList" not of document.documentElement) and Object.defineProperty and t
         get: ->
           self.className.split(/\s+/).length
 
-      ret
+      ret     
 
 String::to_rfc3986 = ->
   tmp = encodeURIComponent(this)
@@ -75,8 +75,8 @@ class ShareUtils
     navigator.userAgent.indexOf('iPhone') != -1 or navigator.userAgent.indexOf('iPod') != -1 or navigator.userAgent.indexOf('iPad') != -1
 
   encode: (str) ->
-    if typeof(str) is "undefined" or @is_encoded(str) then str else str.to_rfc3986()
-
+    if typeof(str) is "undefined" or @is_encoded(str) then str else str.to_rfc3986() 
+  
   popup: (url, params = {}) ->
     popup =
       width:  500
