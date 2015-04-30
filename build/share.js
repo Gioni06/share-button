@@ -261,11 +261,101 @@ Share = (function(superClass) {
     this.hide(instance);
     this.add_class(instance, "sharer-" + index);
     instance = document.querySelectorAll(element)[index];
-    if (instance.dataset.facebookUrl !== void 0 || null) {
+    if (instance.dataset.url !== void 0 || null) {
       opts = {
         networks: {
           facebook: {
-            url: instance.dataset.facebookUrl
+            url: instance.dataset.url
+          },
+          twitter: {
+            url: instance.dataset.url
+          },
+          pinterest: {
+            url: instance.dataset.url
+          },
+          whatsapp: {
+            url: instance.dataset.url
+          },
+          email: {
+            url: instance.dataset.url
+          },
+          google_plus: {
+            url: instance.dataset.url
+          }
+        }
+      };
+      this.extend(this.config, opts, true);
+    }
+    if (instance.dataset.title !== void 0 || null) {
+      opts = {
+        networks: {
+          facebook: {
+            title: instance.dataset.title
+          },
+          twitter: {
+            title: instance.dataset.title
+          },
+          pinterest: {
+            title: instance.dataset.title
+          },
+          whatsapp: {
+            title: instance.dataset.title
+          },
+          email: {
+            title: instance.dataset.title
+          },
+          google_plus: {
+            title: instance.dataset.title
+          }
+        }
+      };
+      this.extend(this.config, opts, true);
+    }
+    if (instance.dataset.description !== void 0 || null) {
+      opts = {
+        networks: {
+          facebook: {
+            description: instance.dataset.description
+          },
+          twitter: {
+            description: instance.dataset.description
+          },
+          pinterest: {
+            description: instance.dataset.description
+          },
+          whatsapp: {
+            description: instance.dataset.description
+          },
+          email: {
+            description: instance.dataset.description
+          },
+          google_plus: {
+            description: instance.dataset.description
+          }
+        }
+      };
+      this.extend(this.config, opts, true);
+    }
+    if (instance.dataset.image !== void 0 || null) {
+      opts = {
+        networks: {
+          facebook: {
+            image: instance.dataset.titimagele
+          },
+          twitter: {
+            image: instance.dataset.image
+          },
+          pinterest: {
+            image: instance.dataset.image
+          },
+          whatsapp: {
+            image: instance.dataset.image
+          },
+          email: {
+            image: instance.dataset.image
+          },
+          google_plus: {
+            image: instance.dataset.image
           }
         }
       };

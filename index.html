@@ -18,17 +18,13 @@
 </head>
 <body>
 
-  <div class='share-button' data-facebook-url="http://www.bebe.de"></div>
+  <div class='share-button' data-url="http://www.bebe.de" data-title="Das ist ein Test" data-img="http://carrot.is/img/fb-share.jpg" data-description="Eine Custom Description"></div>
 
   <script src='build/share.js'></script>
   <script>
-    var config = {
-                    networks: {
 
-                    }
-                  }
 
-    var share = new Share(".share-button", config);
+    var share = new Share(".share-button");
 
 
     // var share = new Share(".share-button-2", config);
