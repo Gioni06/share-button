@@ -154,7 +154,7 @@ class Share extends ShareUtils
       opts =
         networks:
           facebook:
-            image: instance.dataset.titimagele
+            image: instance.dataset.image
           twitter:
             image: instance.dataset.image
           pinterest:

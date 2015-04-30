@@ -38,9 +38,9 @@ if ("classList" not of document.documentElement) and Object.defineProperty and t
 String::to_rfc3986 = ->
   tmp = encodeURIComponent(this)
   tmp.replace /[!'()*]/g, (c) ->
-    "%" + c.charCodeAt(0).toString(16)
-
-####
+    '%' + c.charCodeAt(0).toString(16)
+###
+###
 
 class ShareUtils
   extend: (to, from, overwrite) ->
