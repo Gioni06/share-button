@@ -548,7 +548,7 @@ Share = (function(superClass) {
   };
 
   Share.prototype.inject_html = function(instance) {
-    return instance.innerHTML = "<label class='entypo-export'><i class='fa fa-share-alt' style='display: inline;'></i><span>" + this.config.ui.button_text + "</span></label><div class='social load " + this.config.ui.flyout + "'><ul><li class='fa fa-pinterest-p' data-network='pinterest'></li><li class='fa fa-twitter' data-network='twitter'></li><li class='fa fa-facebook' data-network='facebook'><span class='count'>10</span></li><li class='fa fa-google-plus' data-network='google_plus'></li><li class='fa fa-paper-plane' data-network='email'></li><li class='fa fa-whatsapp' data-network='whatsapp'></li></ul></div>";
+    return instance.innerHTML = "<label class='entypo-export'><i class='fa fa-share-alt' style='display: inline;'></i><span>" + this.config.ui.button_text + "</span></label><div class='social load " + this.config.ui.flyout + "'><ul><li class='fa fa-pinterest-p' data-network='pinterest'></li><li class='fa fa-twitter' data-network='twitter'></li><li class='fa fa-facebook' data-network='facebook'><!--span class='count'>10</span--></li><li class='fa fa-google-plus' data-network='google_plus'></li><li class='fa fa-paper-plane' data-network='email'></li><li class='fa fa-whatsapp' data-network='whatsapp'></li></ul></div>";
   };
 
   Share.prototype.inject_facebook_sdk = function() {
