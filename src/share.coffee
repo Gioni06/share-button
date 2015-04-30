@@ -324,7 +324,7 @@ class Share extends ShareUtils
       @el.head.appendChild(meta)
 
   inject_html: (instance) ->
-    instance.innerHTML = "<label class='entypo-export'><i class='fa fa-share-alt' style='display: inline;'></i><span>#{@config.ui.button_text}</span></label><div class='social load #{@config.ui.flyout}'><ul><li class='fa fa-pinterest-p' data-network='pinterest'></li><li class='fa fa-twitter' data-network='twitter'></li><li class='fa fa-facebook' data-network='facebook'><span class='count'>10</span></li><li class='fa fa-google-plus' data-network='google_plus'></li><li class='fa fa-paper-plane' data-network='email'></li><li class='fa fa-whatsapp' data-network='whatsapp'></li></ul></div>"
+    instance.innerHTML = "<label class='entypo-export'><i class='fa fa-share-alt' style='display: inline;'></i><span>#{@config.ui.button_text}</span></label><div class='social load #{@config.ui.flyout}'><ul><li class='fa fa-pinterest-p' data-network='pinterest'></li><li class='fa fa-twitter' data-network='twitter'></li><li class='fa fa-facebook' data-network='facebook'><!--span class='count'>10</span--></li><li class='fa fa-google-plus' data-network='google_plus'></li><li class='fa fa-paper-plane' data-network='email'></li><li class='fa fa-whatsapp' data-network='whatsapp'></li></ul></div>"
 
   inject_facebook_sdk: ->
     if !window.FB && @config.networks.facebook.app_id && !@el.body.querySelector('#fb-root')
